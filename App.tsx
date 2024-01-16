@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
+const App = () => {
   const [clicked, setClicked] = useState(false);
   const handlePress = () => {
     setClicked(true);
@@ -20,7 +20,7 @@ export default function App() {
       <StatusBar style="auto" />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -52,3 +52,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 });
+
+export default App;
