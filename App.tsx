@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
+import Timer from './Timer';
 
 const App = () => {
   const [clicked, setClicked] = useState(false);
@@ -12,6 +13,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.logo}>Pomodoro</Text>
+      <Timer />
       <View style={styles.button}>
         <Pressable onPress={handlePress}>
           <Text style={styles.text}>{text}</Text>
@@ -33,7 +35,6 @@ const styles = StyleSheet.create({
     fontSize: 25,
     position: 'absolute',
     top: 10,
-    left: 135,
   },
   button: {
     width: 100,
@@ -46,7 +47,6 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     position: 'absolute',
     top: 300,
-    left: 145,
   },
   text: {
     fontSize: 20,
