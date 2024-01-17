@@ -8,12 +8,12 @@ const App = () => {
   const handlePress = () => {
     setClicked(true);
   };
-  const text = clicked ? 'Pause' : 'START';
+  const text: String = clicked ? 'Pause' : 'START';
 
   return (
     <View style={styles.container}>
       <Text style={styles.logo}>Pomodoro</Text>
-      <Timer />
+      <Timer isClicked={clicked} />
       <View style={styles.button}>
         <Pressable onPress={handlePress}>
           <Text style={styles.text}>{text}</Text>

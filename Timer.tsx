@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const Timer = () => {
+const Timer = (props) => {
   const [time, setTime] = useState(300);
 
   useEffect(() => {
@@ -15,13 +15,17 @@ const Timer = () => {
     return () => {
       clearInterval(interval);
     };
-  });
+  }, [props.isClicked]);
 
-  return (
+  const timer = props.isClicked ? (
     <View style={styles.timer}>
       <Text style={styles.text}>{time}</Text>
     </View>
+  ) : (
+    <></>
   );
+
+  return timer;
 };
 
 const styles = StyleSheet.create({
@@ -30,7 +34,7 @@ const styles = StyleSheet.create({
     top: 200,
   },
   text: {
-    fontSize: 25
+    fontSize: 25,
   },
 });
 
