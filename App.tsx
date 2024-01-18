@@ -6,8 +6,9 @@ import Timer from './Timer';
 const App = () => {
   const [clicked, setClicked] = useState(false);
   const handlePress = () => {
-    setClicked(true);
+    setClicked(!clicked);
   };
+
   const text: String = clicked ? 'Pause' : 'START';
 
   return (

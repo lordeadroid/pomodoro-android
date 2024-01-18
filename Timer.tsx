@@ -9,20 +9,23 @@ const Timer = (props) => {
       if (time <= 0) {
         return;
       }
-      setTime(time - 1);
+      const newTime = props.isClicked ? time - 1 : time;
+      setTime(newTime);
     }, 1000);
 
     return () => {
       clearInterval(interval);
     };
-  }, [props.isClicked]);
+  });
 
   const timer = props.isClicked ? (
     <View style={styles.timer}>
       <Text style={styles.text}>{time}</Text>
     </View>
   ) : (
-    <></>
+    <View style={styles.timer}>
+      <Text style={styles.text}>Paused</Text>
+    </View>
   );
 
   return timer;
